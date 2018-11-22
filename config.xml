@@ -114,4 +114,6 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cordova-plugin-chrome-apps-bluetooth" spec="~1.1.5" />
+    <plugin name="cordova-plugin-chrome-apps-bluetoothsocket" spec="~1.0.1" />
 </widget>

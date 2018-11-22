@@ -1,49 +1,65 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+var uuidConstant = '5fc96259-acca-4e48-baa5-834843d42ebf'; //random
 var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
+  // Application Constructor
+  initialize: function() {
+    console.log("app initialize");
+    this.bindEvents();
+  },
+  // Bind Event Listeners
+  //
+  // Bind any events that are required on startup. Common events are:
+  // 'load', 'deviceready', 'offline', and 'online'.
+  bindEvents: function() {
+    document.addEventListener('deviceready', this.onDeviceReady, false);
+  },
+  // deviceready Event Handler
+  //
+  // The scope of 'this' is the event. In order to call the 'receivedEvent'
+  // function, we must explicitly call 'app.receivedEvent(...);'
+  onDeviceReady: function() {
+    popupBox("The Device is now ready");
+    app.receivedEvent('deviceready');
+  },
+  // Update DOM on a Received Event
+  receivedEvent: function(id) {
+    console.log('Received Event: ' + id);
+  }
 };
+
+function getBTState(){
+  popupBox("getBTState");
+  chrome.bluetooth.getAdapterState(function(adapterInfo){
+    popupBox( "AdapterState Address: " + adapterInfo.address );
+    popupBox( "AdapterState Name: " + adapterInfo.name );
+    popupBox( "AdapterState Powered : " + adapterInfo.powered );
+    popupBox( "AdapterState Available: " + adapterInfo.available );
+    popupBox( "AdapterState Discovering: " + adapterInfo.discovering );
+  });
+}
+function enableBT(){
+  popupBox("enableBT");
+}
+function disableBT(){
+  popupBox("disableBT");
+}
+function getBTDevices(){
+  popupBox("getBTDevices");
+}
+function connectRHO(){
+  popupBox("connectRHO");
+}
+function connectLHO(){
+  popupBox("connectLHO");
+}
+function sendRHO(){
+  popupBox("sendRHO");
+}
+function sendLHO(){
+  popupBox("sendLHO");
+}
+function startBTDiscovery(){
+  popupBox("startBTDiscovery");
+}
+function requestUserDiscoverable(){
+  popupBox("requestUserDiscoverable");
+}

@@ -13,7 +13,10 @@
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.phonegap.bt03"
         },
-        "cordova-plugin-media-capture": {
+        "cordova-plugin-chrome-apps-bluetooth": {
+            "PACKAGE_NAME": "com.phonegap.bt03"
+        },
+        "cordova-plugin-chrome-apps-bluetoothsocket": {
             "PACKAGE_NAME": "com.phonegap.bt03"
         },
         "cordova-plugin-console": {
@@ -49,6 +52,9 @@
         "cordova-plugin-media": {
             "PACKAGE_NAME": "com.phonegap.bt03"
         },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.phonegap.bt03"
+        },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.phonegap.bt03"
         },
@@ -66,6 +72,9 @@
         }
     },
     "dependent_plugins": {
+        "cordova-plugin-chrome-apps-common": {
+            "PACKAGE_NAME": "com.phonegap.bt03"
+        },
         "cordova-plugin-file": {
             "PACKAGE_NAME": "com.phonegap.bt03"
         }
